@@ -20,10 +20,20 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  advanced_dbt:
-    +materialized: view
+  course_advanced_dbt:
     +grants:
       select: ['transformer', 'reporter']
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+      +docs:
+        node_color: 'orange'
+  dbt_project_evaluator:
+    +docs:
+      show: false
 
 seeds:
   dbt_project_evaluator:
