@@ -61,6 +61,10 @@ This section contains documentatgion from the Bingeflix `subscription_plans` tab
 This table contains information about various subscription plans available on Bingeflix.
 {% enddocs %}
 
+{% docs bingeflix_billing_period %}
+The recurring billing period for the subscription.
+{% enddocs %}
+
 {% docs bingeflix_payment_period %}
 The recurring payment period for the subscription.
 {% enddocs %}
