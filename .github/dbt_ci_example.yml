@@ -17,14 +17,15 @@ env:
   DBT_PROFILE_PASSWORD: ${{ secrets.DBT_PROFILE_PASSWORD }}
 
 defaults:
- run:
-   working-directory: ci_profiles  # this tells GitHub Actions where to find the profiles.yml for Snowflake connection details
+  run:
+    working-directory: ci_profiles  # Location of Snowflake connection details
 
 jobs:
   run-and-test:
     name: dbt run and test CI checks
     runs-on: ubuntu-latest
 
+    # yamllint disable rule:indentation
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -52,3 +53,4 @@ jobs:
       run: pipenv run dbt run
     - name: Run unit tests
       run: pipenv run dbt test
+      # yamllint enable rule:indentation

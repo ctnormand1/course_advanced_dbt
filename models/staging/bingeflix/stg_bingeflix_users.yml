@@ -36,7 +36,7 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['M','F']
+              values: ['M', 'F']
 
       - name: email
         description: '{{ doc("bingeflix_email") }}'

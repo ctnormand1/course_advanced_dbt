@@ -1,3 +1,7 @@
 target/
 dbt_packages/
 logs/
+
+# I added a dbt profiles file to my local directory so I could run the project
+# outside of gitpod.
+.dbt/
