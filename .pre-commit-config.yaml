@@ -1,0 +1,34 @@
+repos:
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.32.0
+    hooks:
+      - id: yamllint
+  - repo: https://github.com/sqlfluff/sqlfluff
+    rev: 2.1.2
+    hooks:
+      - id: sqlfluff-lint
+        additional_dependencies:
+          - 'dbt-snowflake'
+          - 'sqlfluff-templater-dbt'
+      - id: sqlfluff-fix
+        stages:
+          - manual
+        additional_dependencies:
+          - 'dbt-snowflake'
+          - 'sqlfluff-templater-dbt'
+  - repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+    rev: v1.1.1
+    hooks:
+      - id: dbt-compile
+      - id: dbt-docs-generate
+      - id: check-source-table-has-description
+      - id: check-model-has-tests
+        args: ["--test-cnt", "2", "--"]
+        files: ^models/
+      - id: check-script-semicolon
+      - id: check-script-has-no-table-name
+      - id: check-model-has-all-columns
+        files: ^models/marts
+      - id: check-model-tags
+        args: ["--tags", "hourly", "daily", "weekly", "monthly", "--"]
+        files: ^models/marts/core

@@ -24,7 +24,8 @@ models:
           - not_null
 
       - name: cpm
-        description: "The cost charged by the ads platform per thousand impressions."
+        description: >
+          "The cost charged by the ads platform per thousand impressions."
         tests:
           - not_null
 

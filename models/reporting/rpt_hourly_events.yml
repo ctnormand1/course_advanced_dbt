@@ -1,0 +1,17 @@
+models:
+  - name: rpt_hourly_events
+    description: Reporting table for analysis of hourly event counts.
+    columns:
+      - name: calendar_date
+        description: The calendar date.
+        tests:
+          - unique
+          - not_null
+      - name: count_events
+        description: Count of events.
+        tests:
+          - not_null
+      - name: count_events_5_day_avg
+        description: "5 day rolling average of count_events."
+        tests:
+          - not_null

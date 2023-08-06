@@ -2,7 +2,7 @@ name: Scheduled dbt production run
 
 on:
   schedule:
-    - cron: '0 10 * * *' # Run refresh at 10am UTC everyday (6am EST)
+    - cron: '0 10 * * *'  # Run refresh at 10am UTC everyday (6am EST)
 
 env:
   DBT_PROFILE_TARGET: production
@@ -10,14 +10,16 @@ env:
   DBT_PROFILE_PASSWORD: ${{ secrets.DBT_PROFILE_PASSWORD }}
 
 defaults:
- run:
-   working-directory: ci_profiles
+  run:
+    working-directory: ci_profiles
 
 jobs:
   prod:
     name: Scheduled dbt refresh and test
     runs-on: ubuntu-latest
     timeout-minutes: 90
+
+    # yamllint disable rule:indentation
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -39,3 +41,4 @@ jobs:
       run: pipenv run dbt run
     - name: Execute the tests
       run: pipenv run dbt test
+      # yamllint enable rule:indentation

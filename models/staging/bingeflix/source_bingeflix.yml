@@ -1,7 +1,8 @@
 sources:
   - name: bingeflix
     schema: public
-    description: This source contains tables from the Bingeflix production database
+    description: >
+      This source contains tables from the Bingeflix production database
     database: raw
     tables:
       - name: events
@@ -124,7 +125,7 @@ sources:
             tests:
               - not_null
               - accepted_values:
-                  values: ['M','F']
+                  values: ['M', 'F']
 
           - name: email
             description: '{{ doc("bingeflix_email") }}'

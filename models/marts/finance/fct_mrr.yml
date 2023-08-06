@@ -1,9 +1,12 @@
 models:
   - name: fct_mrr
-    description: This model contains calculations for the monthly recurring revenue generated per user and subscription for each month.
+    description: >
+      This model contains calculations for the monthly recurring revenue
+      generated per user and subscription for each month.
     columns:
       - name: surrogate_key
-        description: The surrogate key. This acts as a primary key for this model.
+        description: >
+          The surrogate key. This acts as a primary key for this model.
         tests:
           - not_null
           - unique
@@ -27,19 +30,31 @@ models:
         description: '{{ doc("bingeflix_plan_name") }}'
 
       - name: mrr_amount
-        description: The amount of monthly recurring revenue generated from the subscription in a given month.
+        description: >
+          The amount of monthly recurring revenue generated from the
+          subscription in a given month.
 
       - name: mrr_change
-        description: The change in monthly recurring revenue from the associated subscription versus last month.
+        description: >
+          The change in monthly recurring revenue from the associated
+          subscription versus last month.
 
       - name: retained_mrr_amount
-        description: The amount of monthly recurring revenue associated with the subscription retained from the previous month.
+        description: >
+          The amount of monthly recurring revenue associated with the
+          subscription retained from the previous month.
 
       - name: previous_month_mrr_amount
-        description: The amount of monthly recurring revenue associated with the subscription earned in the previous month.
+        description: >
+          The amount of monthly recurring revenue associated with the
+          subscription earned in the previous month.
 
       - name: change_category
-        description: The category the subscription falls into based on the current month (e.g. new, churned, retained, reactivated)
+        description: >
+          The category the subscription falls into based on the current month
+          (e.g. new, churned, retained, reactivated)
 
       - name: month_retained_number
-        description: The number of months the subscription has been retained since it was started (first month = 0).
+        description: >
+          The number of months the subscription has been retained since it was
+          started (first month = 0).
