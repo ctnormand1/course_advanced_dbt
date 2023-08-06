@@ -18,3 +18,20 @@ macros:
       - name: order_by
         type: string
         description: (Optional) Column to order by.
+  - name: explode_subscriber_months
+    description: >
+      Used by the fct_mrr model to create a row for every month of a user's
+      subscription.
+    arguments:
+      - name: model
+        type: string
+        description: The name of the model to explode.
+      - name: group_by_cols
+        type: list of strings
+        description: Columns to group by.
+      - name: first_month
+        type: string
+        description: Column containing the first month of the subscription.
+      - name: last_month
+        type: string
+        description: Column containing the last month of the subscription.
