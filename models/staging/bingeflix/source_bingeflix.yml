@@ -54,6 +54,7 @@ sources:
             description: '{{ doc("bingeflix_pricing") }}'
             tests:
               - not_null
+              - assert_greater_than_zero
 
           - name: payment_period
             description: '{{ doc("bingeflix_payment_period") }}'
