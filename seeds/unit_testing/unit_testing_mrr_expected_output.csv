@@ -1,0 +1,4 @@
+﻿surrogate_key,date_month,user_id,subscription_id,starts_at,ends_at,plan_name,mrr_amount,mrr_change,retained_mrr_amount,previous_month_mrr_amount,change_category,month_retained_number
+2023-01-01-1-new,2023-01-01,11111,1,2023-01-02 12:00:00,2023-03-02 12:00:00,Standard with Ads,6,6,0,0,new,0
+2023-01-01-1-renewal,2023-02-01,11111,1,2023-01-02 12:00:00,2023-03-02 12:00:00,Standard with Ads,6,0,6,6,renewal
+2023-03-01-1-churn,2023-03-01,11111,1,2023-01-02 12:00:00,2023-03-02 12:00:00,Standard with Ads,0,-6,0,6,churn
