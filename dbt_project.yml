@@ -39,5 +39,19 @@ seeds:
   dbt_project_evaluator:
     dbt_project_evaluator_exceptions:
       +enabled: false
+  course_advanced_dbt:
+    unit_testing:
+      +schema: unit_testing
+      +tags: unit_testing
+      unit_testing_mrr_input:
+        +column_types:
+          subscription_id: number
+          subscription_plan_id: number
+          user_id: number
+          starts_at: timestamp_ntz
+          ends_at: timestamp_ntz
+          plan_name: text
+          pricing: number
+          billing_period: text
 
 on-run-end: ["{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"]
